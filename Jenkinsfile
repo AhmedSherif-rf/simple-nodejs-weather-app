@@ -27,7 +27,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 script{
-                   gv.Deploying()
+                   gv.deployingApp()
                 }
             }
         }

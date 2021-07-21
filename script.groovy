@@ -10,7 +10,7 @@ def buildpushimg(){
         sh 'docker push ahmedsherifmo/maven-app:mvn-2.0'
     }
 }
-def Deploying(){
+def deployingApp(){
     echo "Deploying the app"
 }
 return this
