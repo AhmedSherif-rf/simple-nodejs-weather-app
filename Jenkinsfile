@@ -9,7 +9,7 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Build'){
             steps {
                 script{
                     echo "Building the pipeline from ${BRANCH_NAME}"
@@ -17,17 +17,22 @@ pipeline {
                 }  
             }
         }
-        stage('build image') {
+        stage('build image'){
+            when {
+                expression {
+                    BRANCH_NAME == 'master'
+                } 
+            }
             steps {
                 script{
                     gv.buildpushimg()
-                    }
                 }
             }
-        stage('Deliver') {
+        }
+        stage('Deliver'){
             when {
                 expression {
-                    BRANCH_NAME == 
+                    BRANCH_NAME == 'master'
                 } 
             }
             steps {
