@@ -24,12 +24,12 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-            steps {
-                script{
-                   gv.deployingApp()
-                }
-            }
-        }
+        // stage('Deliver') {
+        //     steps {
+        //         script{
+        //            gv.deployingApp()
+        //         }
+        //     }
+        // }
     }
 }
