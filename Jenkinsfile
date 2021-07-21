@@ -19,21 +19,16 @@ pipeline {
         }
         stage('build image') {
             steps {
-                when{
-                    expression{
-                        BRANCH_NAME == "master"
-                    }
-                }
                 script{
                     gv.buildpushimg()
                     }
                 }
             }
         stage('Deliver') {
-            when{
-                expression{
-                    BRANCH_NAME == "master"
-                }
+            when {
+                expression {
+                    BRANCH_NAME == 
+                } 
             }
             steps {
                 script{
